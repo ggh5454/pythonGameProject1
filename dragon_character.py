@@ -12,10 +12,11 @@ class Dragon:
         self.screen_width = self.screen_size[0]
         self.screen_height = self.screen_size[1]
 
-        #
+        # dragon 이미지 불러오기, 스케일 조정
         self.dragon_image = pygame.image.load(os.path.join(f"{self.image_path}\\dragon character", "Dragon.png"))
         self.dragon_image = pygame.transform.scale(self.dragon_image, (125, 125))
 
+        # 사이즈, 너비, 높이, x위치, y 위치
         self.dragon_size = self.dragon_image.get_rect().size
         self.dragon_width = self.dragon_size[0]
         self.dragon_height = self.dragon_size[1]
@@ -24,4 +25,5 @@ class Dragon:
         self.dragon_pos = (self.dragon_x_pos, self.dragon_y_pos)
 
     def blitDragon(self, screen=None):
+        # 드래곤 그리기
         screen.blit(self.dragon_image, self.dragon_pos)
