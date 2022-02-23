@@ -10,7 +10,7 @@ class Game:
         pygame.init()
 
         # screen 설정
-        self.screen_size = (1024, 720) # (가로, 세로)
+        self.screen_size = (1024, 720)  # (가로, 세로)
         self.screen = pygame.display.set_mode(self.screen_size)
 
         # 화면 타이틀 설정
@@ -39,8 +39,10 @@ class Game:
             for event in pygame.event.get():  # 어떤 이벤트가 발생하였는가?
                 if event.type == pygame.QUIT:  # 창이 닫히는 이벤트가 발생하였는가?
                     running = False  # 게임이 진행 중이 아님
+                self.dragonCharacter.moveDragonCondition(event=event)
+
             self.background.blitBackground(self.screen, self.screen_size)
-            self.dragonCharacter.blitDragon(self.screen)
+            self.dragonCharacter.blitDragon(self.screen, pos=self.dragonCharacter.locateDragon())
 
             pygame.display.update()  # 게임 화면을 다시 그리기!
 
