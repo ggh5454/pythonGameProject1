@@ -2,6 +2,7 @@ import pygame
 from background import Background
 import os
 from dragon_character import Dragon
+from obstacle import Obstacle
 
 
 class Game:
@@ -27,6 +28,8 @@ class Game:
         self.background = Background(self.image_path, screen_size=self.screen_size)
         # dragon_character.py Dragon 객체
         self.dragonCharacter = Dragon(self.image_path, self.screen_size)
+        # obstacle.py Obstacle 객체
+        self.obstacle = Obstacle(screen_size=self.screen_size, image_folder_path=self.image_path)
 
         # 게임 시작
         Game.startGame(self)
@@ -43,6 +46,7 @@ class Game:
 
             self.background.blitBackground(self.screen, self.screen_size)
             self.dragonCharacter.blitDragon(self.screen, pos=self.dragonCharacter.locateDragon())
+            self.obstacle.blitObstacle(self.screen)
 
             pygame.display.update()  # 게임 화면을 다시 그리기!
 
