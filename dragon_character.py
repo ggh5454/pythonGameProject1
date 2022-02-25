@@ -64,6 +64,17 @@ class Dragon:
         # 위치 정의
         self.dragon_x_pos += self.dragon_to_left + self.dragon_to_right
         self.dragon_y_pos += self.dragon_to_top + self.dragon_to_bottom
+
+        if self.dragon_x_pos < 0:
+            self.dragon_x_pos = 0
+        elif self.dragon_x_pos > self.screen_width - self.dragon_width:
+            self.dragon_x_pos = self.screen_width - self.dragon_width
+
+        if self.dragon_y_pos < 0:
+            self.dragon_y_pos = 0
+        elif self.dragon_y_pos > self.screen_height - self.dragon_height:
+            self.dragon_y_pos = self.screen_height - self.dragon_height
+
         self.dragon_pos = (self.dragon_x_pos, self.dragon_y_pos)
 
         return self.dragon_pos

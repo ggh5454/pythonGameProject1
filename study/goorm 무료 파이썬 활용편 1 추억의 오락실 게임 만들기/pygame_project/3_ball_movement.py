@@ -127,11 +127,11 @@ while running:
         ball_width = ball_size[0]
         ball_height = ball_size[1]
 
-        # 가로벽에 닿았을 때 곧 이동 위치 변경(튕겨 나오는 효과)
+        # 세로벽에 닿았을 때 곧 이동 위치 변경(튕겨 나오는 효과)
         if ball_pos_x <= 0 or ball_pos_x > screen_width - ball_width:
             ball_val["to_x"] = ball_val["to_x"] * -1
 
-        # 세로 위치
+        # 가로벽 위치
         if ball_pos_y >= screen_height - stage_height - ball_height:
             ball_val["to_y"] = ball_val["init_spd_y"]
         else:  # 그외의 모든 경우에는 속도를 증가
