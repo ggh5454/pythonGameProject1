@@ -78,12 +78,3 @@ class Dragon:
         self.dragon_pos = (self.dragon_x_pos, self.dragon_y_pos)
 
         return self.dragon_pos
-    #
-    #     # 3. 게임 캐릭터 위치 정의
-    #
-    # character_x_pos += character_to_x_LEFT + character_to_x_RIGHT
-    #
-    # if character_x_pos < 0:
-    #     character_x_pos = 0
-    # elif character_x_pos > screen_width - character_width:
-    #     character_x_pos = screen_width - character_width

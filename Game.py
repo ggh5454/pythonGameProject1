@@ -43,6 +43,7 @@ class Game:
                 if event.type == pygame.QUIT:  # 창이 닫히는 이벤트가 발생하였는가?
                     running = False  # 게임이 진행 중이 아님
                 self.dragonCharacter.moveDragonCondition(event=event)
+                pygame.event.clear()
 
             self.background.blitBackground(self.screen, self.screen_size)
             self.dragonCharacter.blitDragon(self.screen, pos=self.dragonCharacter.locateDragon())
